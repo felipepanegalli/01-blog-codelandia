@@ -2,14 +2,18 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
 
 :root {
-  --purple: #574ae8;
-  --white: #ffffff;
-  --white-200: #f9f9f9;
-  --gray: #717171;
-  --gray-dark: #1a202c;
+    --purple: #574ae8;
+    --white: #ffffff;
+    --white-200: #f9f9f9;
+    --gray: #717171;
+    --gray-dark: #1a202c;
 
-  --gradient-default: linear-gradient(90deg, #574ae8, #3ea1db);
+    --gradient-default: linear-gradient(90deg, #574ae8, #3ea1db);
 
-  --font-inter: "Inter", sans-serif;
-  --font-lexend: "Lexend Deca", sans-serif;
+    --font-inter: "Inter", sans-serif;
+    --font-lexend: "Lexend Deca", sans-serif;
+}
+
+body {
+    background-color: var(--white-200);
 }
