@@ -4,12 +4,14 @@
             <p class="date">
                 <slot name="date"></slot>
             </p>
-            <template v-if="like">
-                <i class="bi bi-heart-fill"></i>
-            </template>
-            <template v-else>
-                <i class="bi bi-heart"></i>
-            </template>
+            <button @click="changeLike">
+                <template v-if="isLiked">
+                    <i class="bi bi-heart-fill"></i>
+                </template>
+                <template v-else>
+                    <i class="bi bi-heart"></i>
+                </template>
+            </button>
         </div>
         <h1 class="title">
             <slot name="title"></slot>
@@ -30,7 +32,13 @@ export default {
     },
 
     setup(props) {
-        // console.log(props.like)
+        const isLiked = ref(props.like);
+
+        const changeLike = () => {
+            isLiked.value = !isLiked.value
+        }
+
+        return { isLiked, changeLike }
     }
 }
 </script>
@@ -58,9 +66,15 @@ export default {
             font-size: 14px;
         }
 
-        i {
-            color: var(--purple);
-            font-size: 18px;
+        button {
+            cursor: pointer;
+            border: none;
+            background: transparent;
+
+            i {
+                color: var(--purple);
+                font-size: 18px;
+            }
         }
     }
 
